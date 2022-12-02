@@ -10,8 +10,6 @@ def get_grapth_data(start_date, days, currency):
         currency
     )
 
-    print(url)
-
     response = requests.get(url)
     data = response.json().get("rates")
     return [data[key].get(currency, "-") for key in data.keys()]
